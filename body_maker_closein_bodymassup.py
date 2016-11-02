@@ -7,7 +7,7 @@ import scipy.interpolate as intp
 seed = None#1844
 e_0 = None#0.01
 i_0 = None#0.5#*np.pi/180.
-mass = 0.02 *  0.000003003 #0.0167 * 0.000003003
+mass = 2.0 * 0.02 *  0.000003003 #0.0167 * 0.000003003
 
 if len(sys.argv) != 5:
     print "I need four arguments to this code!  "

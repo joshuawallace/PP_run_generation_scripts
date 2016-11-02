@@ -30,13 +30,13 @@ if number not in (150, 300, 75):
     print "Now quitting..."
     quit()
 
-cusp = "0.02"
-m = 353.5533906/(.02-.005)
+cusp = "0.01"
+m = 544.331054/(.015-.005)
 b = -m*.005
 def sigma_1(a):
     if a < 0.005 or a > 0.04:
         return 0.
-    if a < 0.02:
+    if a < 0.015:
         return m*a + b
     else:
         return np.power(a,-1.5)
