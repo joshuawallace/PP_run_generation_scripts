@@ -30,7 +30,7 @@ if number not in (150, 300, 75):
     print "Now quitting..."
     quit()
 
-cusp = "0.01"
+cusp = "0.015"
 m = 544.331054/(.015-.005)
 b = -m*.005
 def sigma_1(a):
