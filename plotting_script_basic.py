@@ -20,7 +20,8 @@ import mercury_output_looker_ater as looker_ater
 if len(sys.argv) == 1: #If no time array was passed in via the command line
     cwd = os.getcwd()
     if ('largeMFM' in cwd or
-       'midMFM'   in cwd):
+       'midMFM'   in cwd  or
+       'onlymerging'  in cwd):
           times_ = (0.,100,300,2000,10000,3.00e5)
           final_time = 3e5
     elif 'smallMFM' in cwd:
@@ -47,7 +48,8 @@ aei_files = filter(os.path.isfile, glob.glob('./*.aei'))
 
 if not aei_files: #If there are no aei files, ask if user wants to run element7
     print "There are no .aei files"
-    run_element7 = raw_input("Do you want to run element7? (y/[n])")
+    print "Yes is currently the default value to run elemen7"
+    run_element7 = 'y'#raw_input("Do you want to run element7? (y/[n])")
     
     if run_element7 in ['y','yes','Y','Yes','YES']:
         print "Running element7..."
@@ -71,8 +73,8 @@ i_max,final_body_indices = mercury.final_body_determiner(aei,I_want_list_of_fina
 print final_body_indices
 print "those were the final_body_indices"
 
-"""
 
+"""
 aes_forplotting = [item.a for item in aei]
 times_forplotting= [item.time for item in aei]
 if glob.glob("FRAG*.aei"): #If there exists FRAG*.aei files
@@ -81,11 +83,12 @@ else:
     fig = looker_ater.plot_a_func_time(aes_forplotting,times_forplotting,which_are_final_bodies=final_body_indices,year_unit='kyr',title="No fragment .aei files found or plotted")
 fig.savefig("a_func_time.pdf")
 
+
 ###########
 mercury.plot_all_aeis_here(times=times_,a_limits=(0.002,0.046),names_and_aeifunctime = (names,aei),year_unit="kyr",  e_limits=(0.,0.1) )
 ###########
-
 """
+
 time, aei_functime, num = mercury.aei_func_time(aei)
 print "Number of final bodies, " + str(len(aei_functime[-1].name))
 print "  Names: " + str(aei_functime[-1].name)
@@ -97,7 +100,6 @@ print "Number of non-fragment final bodies, " + str(len( [item for item in aei_f
 #print "done with num_func_time_inout_roche "
 
 
-"""
 name_temp = aei_functime[-1].name
 a_temp = aei_functime[-1].a
 e_temp = aei_functime[-1].e
@@ -111,7 +113,7 @@ fig.savefig("separation.pdf")
 
 fig = mercury.plot_number_func_time(filename="condorstdout.out")
 fig.savefig("number_bodies_func_time.png",dpi=150)
-"""
+
 
 temp = [item for item in aei_functime[-1].name]
 names_of_final_bodies = temp
@@ -121,7 +123,14 @@ for item in temp:
     thefile.write(item+'\n')
 
 thefile.close()
-"""
+
+
+#Mass func time
+fig = mercury.plot_mass_func_time(names_of_final_bodies,final_time=final_time)
+fig.savefig("mass_func_time.pdf")
+
+
+
 collision_info_tuple = mercury.collision_info_extractor("info.out") #Extract already since we'll need it
     #for the plot_collisions_mtovermp_func_time() function
 
@@ -135,18 +144,13 @@ meanmedian_output = mercury.calc_average_mtovermp(collision_info_tuple[0],[item 
 np.savetxt("all_mean_median_mtmp.txt",meanmedian_output[0])
 np.savetxt("selected_mean_median_mtmp.txt",meanmedian_output[1])
 
-"""
-
-#Mass func time
-fig = mercury.plot_mass_func_time(names_of_final_bodies,final_time=final_time)
-fig.savefig("mass_func_time.pdf")
 
 
 fig = mercury.plot_collision_scatterplot_simplifiedcollisionclassification(whichones=[item for item in aei_functime[-1].name], title="Just Final Bodies")
 fig.savefig("collision_scatterplot_justfinalbodies.png")
 
-fig = mercury.plot_collision_scatterplot_simplifiedcollisionclassification(whichones=[item for item in aei_functime[-1].name if 'F' not in item], title="Just Final Bodies that aren't Fragments")
-fig.savefig("collision_scatterplot_justfinalbodies_notfrags.png")
+fig = mercury.plot_collision_scatterplot_simplifiedcollisionclassification(whichones=[item for item in aei_functime[-1].name], title="Just Final Bodies, only outside Roche",outside_Roche=True)
+fig.savefig("collision_scatterplot_justfinalbodies_rochecutoff.png")
 
 
 

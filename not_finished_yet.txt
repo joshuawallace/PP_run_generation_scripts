@@ -1,0 +1,17 @@
+### directory_name                      condor_id  
+control_notidal_midMFM_3                    532  #just rerun a bunch
+control_notidal_smallMFM_3                  537  #just rerun a bunch
+variation_bodymass_up_midMFM_2              430  #just rerun a bunch
+variation_bodymass_up_midMFM_5              433  #just rerun a bunch
+variation_bodymass_up_smallMFM_1b            504
+variation_bodymass_up_smallMFM_2b            505
+variation_bodymass_up_smallMFM_3b            506
+variation_bodymass_up_smallMFM_4b            507
+variation_bodymass_up_smallMFM_5b            508
+variation_cusp_down_smallMFM_3b              511 #just rerun a bunch
+variation_numbody_up_midMFM_4b              468  #just rerun a bunch
+variation_numbody_up_smallMFM_1b             520
+variation_numbody_up_smallMFM_2b             521
+variation_numbody_up_smallMFM_3b             522
+variation_numbody_up_smallMFM_4b             523
+variation_numbody_up_smallMFM_5b             524

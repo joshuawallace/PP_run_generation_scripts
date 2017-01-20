@@ -1,4 +1,4 @@
-### directory_name                      condor_id  finished  96
+### directory_name                      condor_id  finished  97
 control_notidal_largeMFM_1                  525  #35
 control_notidal_largeMFM_2                  526  #14
 control_notidal_largeMFM_3                  527  #8
@@ -89,7 +89,7 @@ variation_cusp_down_midMFM_3                477  #85
 #variation_cusp_down_smallMFM_2              481
 #variation_cusp_down_smallMFM_3              482
 variation_cusp_down_smallMFM_1b              509 #76
-variation_cusp_down_smallMFM_2b              510
+variation_cusp_down_smallMFM_2b              510 #97
 variation_cusp_down_smallMFM_3b              511
 variation_cusp_up_largeMFM_1                483  #29
 variation_cusp_up_largeMFM_2                484  #26
