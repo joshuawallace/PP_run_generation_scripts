@@ -64,6 +64,9 @@ else:
 ## Enough for the preliminaries, now on to the main event!
 ###########################
 
+#e_vs_a
+mercury.plot_all_aeis_here(times=times_,a_limits=(0,0.04))
+
 names, aei = mercury.aei_aggregator() #Names and aei information for the bodies
 
 #names_justorig, aei_justorig = mercury.aei_aggregator(just_original_bodies=True)
