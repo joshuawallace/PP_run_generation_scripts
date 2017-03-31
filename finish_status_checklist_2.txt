@@ -1,4 +1,4 @@
-#33 last one
+#44 last one
 control_notidal_midMFM_6                553  #8
 control_notidal_midMFM_7                554  #4
 control_notidal_midMFM_8                555  #7
@@ -13,25 +13,25 @@ variation_bodymass_up_midMFM_6          563 #33
 variation_bodymass_up_midMFM_7          564
 variation_bodymass_up_midMFM_8          565 #15
 variation_bodymass_up_midMFM_9          566 #30
-variation_bodymass_up_midMFM_10         567
+variation_bodymass_up_midMFM_10         567 #34
 variation_bodymass_up_midMFM_11         568 #24
-variation_bodymass_up_midMFM_12         569
+variation_bodymass_up_midMFM_12         569 #35
 variation_bodymass_up_midMFM_13         570 #27
 variation_bodymass_up_midMFM_14         571
 variation_cusp_down_smallMFM_6b         572
-variation_cusp_down_smallMFM_7b         573
+variation_cusp_down_smallMFM_7b         573 #36
 variation_cusp_down_smallMFM_8b         574
-variation_cusp_down_smallMFM_9b         575
-variation_cusp_down_smallMFM_10b        576
+variation_cusp_down_smallMFM_9b         575 #39
+variation_cusp_down_smallMFM_10b        576 #37
 variation_cusp_down_smallMFM_11b        577
 variation_cusp_down_smallMFM_12b        578
-variation_numbody_up_midMFM_6           579
-variation_numbody_up_midMFM_7           580
+variation_numbody_up_midMFM_6           579 #42
+variation_numbody_up_midMFM_7           580 #40
 variation_numbody_up_midMFM_8           581
-variation_numbody_up_midMFM_9           582
-variation_numbody_up_midMFM_10          583
-variation_numbody_up_midMFM_11          584
-variation_numbody_up_midMFM_12          585
+variation_numbody_up_midMFM_9           582 #41
+variation_numbody_up_midMFM_10          583 #38
+variation_numbody_up_midMFM_11          584 #44
+variation_numbody_up_midMFM_12          585 #43
 ############# Different code, with max number of fragments
 variation_bodymass_up_smallMFM_maxfragnum_1      586 #20
 variation_bodymass_up_smallMFM_maxfragnum_2      587 #11
