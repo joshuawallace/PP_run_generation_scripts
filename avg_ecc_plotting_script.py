@@ -21,10 +21,12 @@ print final_bodies
 names, aei = mercury.aei_aggregator(which_bodies=final_bodies)
 print names
 
+close_encounters = ecc.close_encounter_getter(names,threshold=8e-6)
+
 time, aei_functime, num = mercury.aei_func_time(aei)
 
 
 (num_func_time,split_over_roche) = mercury.numberofbodies_functime_reader('condorstdout.out')
 
-fig = ecc.plot_average_ecc_func_time(time,[x.e for x in aei_functime], [val.number_outside_roche for val in split_over_roche],second_time = [val.time for val in split_over_roche])
+fig = ecc.plot_average_ecc_func_time(time,[x.e for x in aei_functime], [val.number_outside_roche for val in split_over_roche],second_time = [val.time for val in split_over_roche], ce_to_plot=close_encounters)
 fig.savefig("avg_ecc.png")

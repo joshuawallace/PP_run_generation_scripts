@@ -98,6 +98,14 @@ time, aei_functime, num = mercury.aei_func_time(aei)
 print "Number of final bodies, " + str(len(aei_functime[-1].name))
 print "  Names: " + str(aei_functime[-1].name)
 print "Number of non-fragment final bodies, " + str(len( [item for item in aei_functime[-1].name if 'F' not in item] ))
+print "Number of final planets, " + str(len( [item for item in aei_functime[-1].a if item >= 0.0088781786] ))
+print "Number of final planets outside 1.1 rroche, " + str(len( [item for item in aei_functime[-1].a if item >= 1.1*0.0088781786] ))
+
+
+
+
+quit()
+
 
 
 #fig = looker_ater.adhoc_number_insideoutside_roche(time, aei_functime, num)
