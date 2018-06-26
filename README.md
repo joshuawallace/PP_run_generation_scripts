@@ -1,3 +1,14 @@
+# Planet Project generation scripts
+
+This code is used to generate the initial parameter files for running the N-body code Mercury for my research project published (here)[http://iopscience.iop.org/article/10.3847/1538-3881/aa8c08/meta].
+Also scripts to submit the jobs on the local HTCondor system.
+
+--------------
+
+Listed below are descriptions of the various types of runs created and submitted.
+
+---
+
 normal_largeMFM_1 - normal initial conditions with large (1.2) MFM
 normal_midMFM_1   - "                            " mid (0.8) MFM
 normal_smallMFM_1 - "                            " small (0.4) MFM
